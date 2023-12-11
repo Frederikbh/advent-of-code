@@ -3,7 +3,7 @@ using AngleSharp.Dom;
 
 namespace AdventOfCode.Model;
 
-internal class Problem {
+public class Problem {
     public string? Title { get; private set; }
     public string? ContentMd { get; private set; }
     public int Day { get; private set; }

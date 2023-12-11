@@ -1,7 +1,7 @@
 namespace AdventOfCode.Y2023.Day09;
 
 [ProblemName("Mirage Maintenance")]
-internal class Solution : ISolver 
+public class Solution : ISolver 
 {
 
     public object PartOne(string input) 

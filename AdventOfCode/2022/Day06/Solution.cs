@@ -1,7 +1,7 @@
 namespace AdventOfCode.Y2022.Day06;
 
 [ProblemName("Tuning Trouble")]
-internal class Solution : ISolver 
+public class Solution : ISolver 
 {
 
     public object? PartOne(string input)

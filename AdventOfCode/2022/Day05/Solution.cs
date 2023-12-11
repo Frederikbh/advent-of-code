@@ -5,7 +5,7 @@ using AngleSharp.Text;
 namespace AdventOfCode.Y2022.Day05;
 
 [ProblemName("Supply Stacks")]
-internal class Solution : ISolver 
+public class Solution : ISolver 
 {
 
     public object PartOne(string input)

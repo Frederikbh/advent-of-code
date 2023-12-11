@@ -3,7 +3,7 @@ using AdventOfCode.Model;
 
 namespace AdventOfCode.Generator;
 
-internal class SplashScreenGenerator {
+public class SplashScreenGenerator {
     public string Generate(Calendar calendar) {
         var calendarPrinter = CalendarPrinter(calendar);
         return $@"

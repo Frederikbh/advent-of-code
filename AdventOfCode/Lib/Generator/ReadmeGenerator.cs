@@ -2,7 +2,7 @@ using AdventOfCode.Model;
 
 namespace AdventOfCode.Generator;
 
-internal class ProjectReadmeGenerator {
+public class ProjectReadmeGenerator {
     public string Generate(int firstYear, int lastYear) {
        
         return $@"
@@ -64,7 +64,7 @@ internal class ProjectReadmeGenerator {
     }
 }
 
-internal class ReadmeGeneratorForYear {
+public class ReadmeGeneratorForYear {
     public string Generate(Calendar calendar) {
         return $@"
            > # Advent of Code ({calendar.Year})
