@@ -160,7 +160,7 @@ string[] Args(params string[] regex)
     return regex;
 }
 
-internal class Usage
+public class Usage
 {
     public static string Get()
     {

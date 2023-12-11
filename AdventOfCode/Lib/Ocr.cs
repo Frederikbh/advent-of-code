@@ -2,13 +2,13 @@ using System.Text.RegularExpressions;
 
 namespace AdventOfCode;
 
-internal static class OcrExtension {
+public static class OcrExtension {
     public static OcrString Ocr(this string st) {
         return new OcrString(st);
     }
 }
 
-internal record OcrString(string st) {
+public record OcrString(string st) {
     public override string ToString() {
         var lines = st.Split("\n")
             .SkipWhile(string.IsNullOrWhiteSpace)
