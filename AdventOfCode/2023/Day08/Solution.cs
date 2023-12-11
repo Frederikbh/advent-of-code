@@ -1,11 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Linq;
 using System.Text.RegularExpressions;
-using System.Text;
-
-using AngleSharp.Dom;
 
 namespace AdventOfCode.Y2023.Day08;
 
