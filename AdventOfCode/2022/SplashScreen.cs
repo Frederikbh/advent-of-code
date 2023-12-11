@@ -1,6 +1,4 @@
 
-using System;
-
 namespace AdventOfCode.Y2022;
 
 class SplashScreenImpl : SplashScreen {
