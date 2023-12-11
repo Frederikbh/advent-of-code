@@ -59,7 +59,7 @@ public class Solution : ISolver
 
     private static long Lcm(long a, long b)
     {
-        return (a / Gcd(a, b)) * b;
+        return a / Gcd(a, b) * b;
     }
 
     private static long GetStepsToValidGhostEnd(Input input, string from)

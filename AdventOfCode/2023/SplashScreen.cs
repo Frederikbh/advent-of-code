@@ -1,17 +1,15 @@
 
-using System;
-
 namespace AdventOfCode.Y2023;
 
-class SplashScreenImpl : SplashScreen {
+public class SplashScreenImpl : SplashScreen {
 
     public void Show() {
 
         var color = Console.ForegroundColor;
         Write(0xcc00, false, "           ▄█▄ ▄▄█ ▄ ▄ ▄▄▄ ▄▄ ▄█▄  ▄▄▄ ▄█  ▄▄ ▄▄▄ ▄▄█ ▄▄▄\n           █▄█ █ █ █ █ █▄█ █ █ █   █ █ █▄ ");
-            Write(0xcc00, false, " █  █ █ █ █ █▄█\n           █ █ █▄█ ▀▄▀ █▄▄ █ █ █▄  █▄█ █   █▄ █▄█ █▄█ █▄▄  int y = 2023;\n           ");
-            Write(0xcc00, false, " \n                                                            \n                                     ");
-            Write(0xcc00, false, "                       \n                       ");
+            Write(0xcc00, false, " █  █ █ █ █ █▄█\n           █ █ █▄█ ▀▄▀ █▄▄ █ █ █▄  █▄█ █   █▄ █▄█ █▄█ █▄▄  /^2023$/\n            \n   ");
+            Write(0xcc00, false, "                                                         \n                                          ");
+            Write(0xcc00, false, "                  \n                       ");
             Write(0xd4dde4, false, "..                                   \n               .'                                           \n ");
             Write(0xd4dde4, false, "                                                           \n           .'");
             Write(0x333333, false, "      * ");

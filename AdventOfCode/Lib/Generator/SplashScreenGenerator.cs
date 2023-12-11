@@ -7,11 +7,9 @@ public class SplashScreenGenerator {
     public string Generate(Calendar calendar) {
         var calendarPrinter = CalendarPrinter(calendar);
         return $@"
-            |using System;
-            |
             |namespace AdventOfCode.Y{calendar.Year};
             |
-            |class SplashScreenImpl : SplashScreen {{
+            |public class SplashScreenImpl : SplashScreen {{
             |
             |    public void Show() {{
             |
@@ -36,16 +34,12 @@ public class SplashScreenGenerator {
         var bw = new BufferWriter();
         foreach (var line in lines) {
             foreach (var token in line) {
-                bw.Write(token.ConsoleColor, token.Text ?? string.Empty, token.Bold);
+                bw.Write(token.ConsoleColor, token.Text, token.Bold);
             }
 
             bw.Write(-1, "\n", false);
         }
         return bw.GetContent();
-    }
-
-    private bool Matches(string[] selector, object x){
-        return true;
     }
 
     private class BufferWriter {
