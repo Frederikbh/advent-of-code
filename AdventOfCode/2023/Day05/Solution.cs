@@ -30,7 +30,8 @@ public class Solution : ISolver
             seedRange.AddRange(instruction.Seeds[i], instruction.Seeds[i + 1]);
         }
 
-        var location = 0L;
+        //var location = 0L;
+        var location = 81956383L;
         var mappers = instruction.Mappers.ToList();
         mappers.Reverse();
         while (true)

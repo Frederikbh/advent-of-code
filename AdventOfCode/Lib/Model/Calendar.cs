@@ -80,7 +80,8 @@ public class Calendar
 
         var stYear = years[r.Next(years.Length)];
 
-        var lines = new List<List<CalendarToken>>(){
+        var lines = new List<List<CalendarToken>>
+        {
                 new(){
                     new CalendarToken {ConsoleColor = 0x00cc00, RgbaColor = "rgba(0,204,0,1)", Text = @"▄█▄ ▄▄█ ▄ ▄ ▄▄▄ ▄▄ ▄█▄  ▄▄▄ ▄█  ▄▄ ▄▄▄ ▄▄█ ▄▄▄"}
                 },
@@ -215,7 +216,7 @@ public class Calendar
                                         </style>
                         """);
         sb.AppendLine("""<text xml:space="preserve">""");
-        foreach (var line in this.Lines)
+        foreach (var line in Lines)
         {
             sb.Append("""<tspan x="0" dy="1.2em">""");
             var lineWidth = 0;

@@ -183,7 +183,7 @@ public class Solution : ISolver
             {
                 if (grid[y][x] == 'S')
                 {
-                    return new(x, y);
+                    return new Position(x, y);
                 }
             }
         }
