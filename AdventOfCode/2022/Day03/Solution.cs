@@ -1,7 +1,7 @@
 namespace AdventOfCode.Y2022.Day03;
 
 [ProblemName("Rucksack Reorganization")]
-internal class Solution : ISolver {
+public class Solution : ISolver {
 
     public object? PartOne(string input)
     {

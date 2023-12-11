@@ -4,14 +4,14 @@ using AngleSharp.Dom;
 
 namespace AdventOfCode.Model;
 
-internal class CalendarToken {
+public class CalendarToken {
     public string? Text { get; set; }
     public string? RgbaColor { get; set; }
     public int ConsoleColor { get; set; }
     public bool Bold { get; set; }
 }
 
-internal class Calendar {
+public class Calendar {
     public int Year;
 
     public Dictionary<string[], int> Theme = new();

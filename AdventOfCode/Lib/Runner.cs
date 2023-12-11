@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace AdventOfCode;
 
-internal class ProblemName : Attribute
+public class ProblemName : Attribute
 {
     public readonly string Name;
     public ProblemName(string name)
@@ -12,13 +12,13 @@ internal class ProblemName : Attribute
     }
 }
 
-internal interface ISolver
+public interface ISolver
 {
     object? PartOne(string input);
     object? PartTwo(string input) => null;
 }
 
-internal static class SolverExtensions
+public static class SolverExtensions
 {
 
     public static IEnumerable<object?> Solve(this ISolver solver, string input)
@@ -87,9 +87,9 @@ internal static class SolverExtensions
     }
 }
 
-internal record SolverResult(string[] Answers, string[] Errors);
+public record SolverResult(string[] Answers, string[] Errors);
 
-internal class Runner
+public class Runner
 {
 
     private static string GetNormalizedInput(string file)

@@ -9,7 +9,7 @@ using AngleSharp.Io;
 
 namespace AdventOfCode;
 
-internal class Updater {
+public class Updater {
 
     public async Task Update(int year, int day) {
 

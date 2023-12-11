@@ -10,7 +10,7 @@ using AngleSharp.Dom;
 namespace AdventOfCode.Y2023.Day08;
 
 [ProblemName("Haunted Wasteland")]
-internal class Solution : ISolver 
+public class Solution : ISolver 
 {
 
     public object PartOne(string input)

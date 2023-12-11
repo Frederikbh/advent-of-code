@@ -3,7 +3,7 @@ using System.Buffers;
 namespace AdventOfCode.Y2023.Day03;
 
 [ProblemName("Gear Ratios")]
-internal class Solution : ISolver 
+public class Solution : ISolver 
 {
 
     public object PartOne(string input) 

@@ -3,7 +3,7 @@ using System.ComponentModel;
 namespace AdventOfCode.Y2022.Day02;
 
 [ProblemName("Rock Paper Scissors")]
-internal class Solution : ISolver {
+public class Solution : ISolver {
     private enum Choice
     {
         Rock = 1,
