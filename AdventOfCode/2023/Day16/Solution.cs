@@ -1,10 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Text;
-
 namespace AdventOfCode.Y2023.Day16;
 
 [ProblemName("The Floor Will Be Lava")]
@@ -19,7 +12,6 @@ public class Solution : ISolver
             .ToArray();
 
         return EnergizeGrid(grid, new Ray(-1, 0, 1, 0));
-        return 0;
     }
 
     public object PartTwo(string input)
