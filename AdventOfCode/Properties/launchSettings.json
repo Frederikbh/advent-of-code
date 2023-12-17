@@ -2,7 +2,7 @@
   "profiles": {
     "AdventOfCode": {
       "commandName": "Project",
-      "commandLineArgs": "2023/16",
+      "commandLineArgs": "2023/17",
       "environmentVariables": {
         "SESSION": "53616c7465645f5f6ffba482637d3326bbc779ee8336fe501c865259174fe0a1ec5df50e047f3a94d4a970b05ccf7dbb1120da2b76eed6aa28661ca349c3b5e7"
       }
