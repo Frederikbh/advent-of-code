@@ -204,7 +204,8 @@ public class SplashScreenImpl : SplashScreen {
             Write(0xd4dde4, false, "/  ");
             Write(0xffffff, false, ":              ");
             Write(0xcccccc, false, "25 ");
-            Write(0x666666, false, "**\n                       ");
+            Write(0xffff66, false, "*");
+            Write(0x666666, false, "*\n                       ");
             Write(0xffffff, false, "'.    ");
             Write(0xccccff, false, "- ");
             Write(0xffff66, true, "*  ");
