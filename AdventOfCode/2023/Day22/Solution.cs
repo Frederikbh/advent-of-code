@@ -1,3 +1,5 @@
+using System.Numerics;
+
 namespace AdventOfCode.Y2023.Day22;
 
 [ProblemName("Sand Slabs")]
@@ -13,7 +15,7 @@ public class Solution : ISolver
         var result = bricks
             .Select(e => Disintegrate(e, supports))
             .Count(e => e == 0);
-
+        
         return result;
     }
 
