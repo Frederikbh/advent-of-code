@@ -1,4 +1,6 @@
-namespace AdventOfCode.Y2023.Day17;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day17;
 
 [ProblemName("Clumsy Crucible")]
 public class Solution : ISolver 

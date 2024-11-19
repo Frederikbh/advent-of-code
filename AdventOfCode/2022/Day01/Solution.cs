@@ -1,4 +1,6 @@
-namespace AdventOfCode.Y2022.Day01;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2022.Day01;
 
 [ProblemName("Calorie Counting")]
 public class Solution : ISolver {

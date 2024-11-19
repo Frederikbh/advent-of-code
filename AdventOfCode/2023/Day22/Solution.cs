@@ -1,6 +1,6 @@
-using System.Numerics;
+using AdventOfCode.Lib;
 
-namespace AdventOfCode.Y2023.Day22;
+namespace AdventOfCode._2023.Day22;
 
 [ProblemName("Sand Slabs")]
 public class Solution : ISolver

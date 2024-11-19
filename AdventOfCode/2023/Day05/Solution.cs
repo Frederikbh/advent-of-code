@@ -1,4 +1,6 @@
-namespace AdventOfCode.Y2023.Day05;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day05;
 
 [ProblemName("If You Give A Seed A Fertilizer")]
 public class Solution : ISolver

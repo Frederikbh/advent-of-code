@@ -1,6 +1,8 @@
 using System.Text.RegularExpressions;
 
-namespace AdventOfCode.Y2023.Day06;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day06;
 
 [ProblemName("Wait For It")]
 public class Solution : ISolver 

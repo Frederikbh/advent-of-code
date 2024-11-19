@@ -1,4 +1,6 @@
-namespace AdventOfCode.Y2022.Day07;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2022.Day07;
 
 [ProblemName("No Space Left On Device")]
 public class Solution : ISolver 

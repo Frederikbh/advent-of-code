@@ -1,4 +1,6 @@
-namespace AdventOfCode.Y2023.Day21;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day21;
 
 [ProblemName("Step Counter")]
 public class Solution : ISolver 

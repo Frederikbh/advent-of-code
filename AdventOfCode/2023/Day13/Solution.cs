@@ -1,4 +1,6 @@
-namespace AdventOfCode.Y2023.Day13;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day13;
 
 [ProblemName("Point of Incidence")]
 public class Solution : ISolver 

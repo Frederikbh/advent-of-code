@@ -1,9 +1,11 @@
 using System.Numerics;
 
+using AdventOfCode.Lib;
+
 using Map = System.Collections.Generic.Dictionary<System.Numerics.Complex, char>;
 using Node = long;
 
-namespace AdventOfCode.Y2023.Day23;
+namespace AdventOfCode._2023.Day23;
 
 [ProblemName("A Long Walk")]
 public class Solution : ISolver 

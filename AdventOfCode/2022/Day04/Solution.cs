@@ -1,6 +1,8 @@
 using System.Text.RegularExpressions;
 
-namespace AdventOfCode.Y2022.Day04;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2022.Day04;
 
 [ProblemName("Camp Cleanup")]
 internal partial class Solution : ISolver

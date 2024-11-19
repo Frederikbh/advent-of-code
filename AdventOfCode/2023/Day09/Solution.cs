@@ -1,4 +1,6 @@
-namespace AdventOfCode.Y2023.Day09;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day09;
 
 [ProblemName("Mirage Maintenance")]
 public class Solution : ISolver 

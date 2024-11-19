@@ -1,6 +1,8 @@
 using System.Text.RegularExpressions;
 
-namespace AdventOfCode.Y2023.Day02;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day02;
 
 [ProblemName("Cube Conundrum")]
 internal partial class Solution : ISolver
