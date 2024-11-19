@@ -1,4 +1,6 @@
-namespace AdventOfCode.Y2022.Day03;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2022.Day03;
 
 [ProblemName("Rucksack Reorganization")]
 public class Solution : ISolver {

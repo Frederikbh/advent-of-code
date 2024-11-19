@@ -1,4 +1,6 @@
-namespace AdventOfCode.Y2023.Day14;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day14;
 
 [ProblemName("Parabolic Reflector Dish")]
 public class Solution : ISolver

@@ -1,6 +1,8 @@
 using System.Buffers;
 
-namespace AdventOfCode.Y2023.Day03;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day03;
 
 [ProblemName("Gear Ratios")]
 public class Solution : ISolver 

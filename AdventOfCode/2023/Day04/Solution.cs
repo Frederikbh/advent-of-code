@@ -1,4 +1,6 @@
-namespace AdventOfCode.Y2023.Day04;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day04;
 
 [ProblemName("Scratchcards")]
 public class Solution : ISolver 

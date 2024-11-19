@@ -1,8 +1,10 @@
 using System.Text.RegularExpressions;
 
+using AdventOfCode.Lib;
+
 using AngleSharp.Text;
 
-namespace AdventOfCode.Y2022.Day05;
+namespace AdventOfCode._2022.Day05;
 
 [ProblemName("Supply Stacks")]
 public class Solution : ISolver 

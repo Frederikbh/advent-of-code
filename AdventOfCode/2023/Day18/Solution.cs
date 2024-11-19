@@ -1,7 +1,9 @@
 using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace AdventOfCode.Y2023.Day18;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day18;
 
 [ProblemName("Lavaduct Lagoon")]
 public partial class Solution : ISolver

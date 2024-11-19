@@ -1,6 +1,8 @@
 using System.ComponentModel;
 
-namespace AdventOfCode.Y2022.Day02;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2022.Day02;
 
 [ProblemName("Rock Paper Scissors")]
 public class Solution : ISolver {

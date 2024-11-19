@@ -1,4 +1,6 @@
-namespace AdventOfCode.Y2023.Day01;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day01;
 
 [ProblemName("Trebuchet?!")]
 public class Solution : ISolver

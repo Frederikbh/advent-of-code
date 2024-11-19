@@ -1,4 +1,6 @@
-namespace AdventOfCode.Y2023.Day11;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day11;
 
 [ProblemName("Cosmic Expansion")]
 public class Solution : ISolver 

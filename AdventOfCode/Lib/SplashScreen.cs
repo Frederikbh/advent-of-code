@@ -1,5 +1,6 @@
-namespace AdventOfCode;
+namespace AdventOfCode.Lib;
 
-public interface SplashScreen {
+public interface ISplashScreen
+{
     void Show();
 }

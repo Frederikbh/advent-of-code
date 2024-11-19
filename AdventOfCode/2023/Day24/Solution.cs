@@ -1,6 +1,8 @@
 using System.Text.RegularExpressions;
 
-namespace AdventOfCode.Y2023.Day24;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day24;
 
 [ProblemName("Never Tell Me The Odds")]
 public class Solution : ISolver 

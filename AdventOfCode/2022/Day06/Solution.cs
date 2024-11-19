@@ -1,4 +1,6 @@
-namespace AdventOfCode.Y2022.Day06;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2022.Day06;
 
 [ProblemName("Tuning Trouble")]
 public class Solution : ISolver 

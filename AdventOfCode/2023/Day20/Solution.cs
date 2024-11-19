@@ -1,8 +1,10 @@
 using System.Text.RegularExpressions;
 
+using AdventOfCode.Lib;
+
 using Signal = (string sender, string receiver, bool value);
 
-namespace AdventOfCode.Y2023.Day20;
+namespace AdventOfCode._2023.Day20;
 
 [ProblemName("Pulse Propagation")]
 public class Solution : ISolver 

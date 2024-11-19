@@ -1,32 +1,36 @@
 using System.Text;
-using AdventOfCode.Model;
 
-namespace AdventOfCode.Generator;
+using AdventOfCode.Lib.Model;
+
+namespace AdventOfCode.Lib.Generator;
 
 public class SplashScreenGenerator {
-    public string Generate(Calendar calendar) {
+    public static string Generate(Calendar calendar) {
         var calendarPrinter = CalendarPrinter(calendar);
-        return $@"
-            |namespace AdventOfCode.Y{calendar.Year};
-            |
-            |public class SplashScreenImpl : SplashScreen {{
-            |
-            |    public void Show() {{
-            |
-            |        var color = Console.ForegroundColor;
-            |        {calendarPrinter.Indent(12)}
-            |        Console.ForegroundColor = color;
-            |        Console.WriteLine();
-            |    }}
-            |
-            |   private static void Write(int rgb, bool bold, string text){{
-            |       Console.Write($""\u001b[38;2;{{(rgb>>16)&255}};{{(rgb>>8)&255}};{{rgb&255}}{{(bold ? "";1"" : """")}}m{{text}}"");
-            |   }}
-            |}}
-            |".StripMargin();
+        return $$"""
+                    |using AdventOfCode.Lib;
+                    |
+                    |namespace AdventOfCode._{{calendar.Year}};
+                    |
+                    |public class SplashScreenImpl : ISplashScreen {
+                    |
+                    |    public void Show() {
+                    |
+                    |        var color = Console.ForegroundColor;
+                    |        {{calendarPrinter.Indent(12)}}
+                    |        Console.ForegroundColor = color;
+                    |        Console.WriteLine();
+                    |    }
+                    |
+                    |   private static void Write(int rgb, bool bold, string text){
+                    |       Console.Write($"\u001b[38;2;{(rgb>>16)&255};{(rgb>>8)&255};{rgb&255}{(bold ? ";1" : "")}m{text}");
+                    |   }
+                    |}
+                    |
+               """.StripMargin();
     }
 
-    private string CalendarPrinter(Calendar calendar) {
+    private static string CalendarPrinter(Calendar calendar) {
 
         var lines = calendar.Lines.Select(line =>
             new[] { new CalendarToken { Text = "           " } }.Concat(line)).ToList();

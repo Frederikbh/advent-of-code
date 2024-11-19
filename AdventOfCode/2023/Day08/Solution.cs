@@ -1,6 +1,8 @@
 using System.Text.RegularExpressions;
 
-namespace AdventOfCode.Y2023.Day08;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day08;
 
 [ProblemName("Haunted Wasteland")]
 public class Solution : ISolver 

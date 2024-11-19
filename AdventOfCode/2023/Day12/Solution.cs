@@ -1,6 +1,8 @@
 using System.Collections.Immutable;
 
-namespace AdventOfCode.Y2023.Day12;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day12;
 
 [ProblemName("Hot Springs")]
 public class Solution : ISolver 

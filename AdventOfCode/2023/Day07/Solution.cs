@@ -1,4 +1,6 @@
-namespace AdventOfCode.Y2023.Day07;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day07;
 
 [ProblemName("Camel Cards")]
 public class Solution : ISolver

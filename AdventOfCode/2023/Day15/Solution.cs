@@ -1,7 +1,9 @@
-using System.Text.RegularExpressions;
 using System.Text;
+using System.Text.RegularExpressions;
 
-namespace AdventOfCode.Y2023.Day15;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day15;
 
 [ProblemName("Lens Library")]
 public partial class Solution : ISolver

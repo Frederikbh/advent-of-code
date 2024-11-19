@@ -1,4 +1,6 @@
-namespace AdventOfCode.Y2023.Day16;
+using AdventOfCode.Lib;
+
+namespace AdventOfCode._2023.Day16;
 
 [ProblemName("The Floor Will Be Lava")]
 public class Solution : ISolver
