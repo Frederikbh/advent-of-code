@@ -8,8 +8,8 @@ public class SplashScreenImpl : ISplashScreen {
 
         var color = Console.ForegroundColor;
         Write(0xcc00, false, "           ▄█▄ ▄▄█ ▄ ▄ ▄▄▄ ▄▄ ▄█▄  ▄▄▄ ▄█  ▄▄ ▄▄▄ ▄▄█ ▄▄▄\n           █▄█ █ █ █ █ █▄█ █ █ █   █ █ █▄ ");
-            Write(0xcc00, false, " █  █ █ █ █ █▄█\n           █ █ █▄█ ▀▄▀ █▄▄ █ █ █▄  █▄█ █   █▄ █▄█ █▄█ █▄▄  // 2024\n            \n    ");
-            Write(0xcc00, false, "              ");
+            Write(0xcc00, false, " █  █ █ █ █ █▄█\n           █ █ █▄█ ▀▄▀ █▄▄ █ █ █▄  █▄█ █   █▄ █▄█ █▄█ █▄▄  0x0000 | 2024\n           ");
+            Write(0xcc00, false, " \n                  ");
             Write(0xcccccc, false, ".--'");
             Write(0xe3b585, false, "~ ~ ~");
             Write(0xcccccc, false, "|        .-' ");
