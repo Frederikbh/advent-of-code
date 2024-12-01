@@ -1,11 +1,10 @@
-using AdventOfCode.Lib;        
+﻿using AdventOfCode.Lib;
 
 namespace AdventOfCode._2024.Day01;
 
 [ProblemName("Historian Hysteria")]
 public class Solution : ISolver
 {
-
     public object PartOne(string input)
     {
         var (list1, list2) = ParseInput(input);
@@ -13,41 +12,19 @@ public class Solution : ISolver
         Array.Sort(list1);
         Array.Sort(list2);
 
-        var result = 0;
-
-        for (var i = 0; i < list1.Length; i++)
-        {
-            result += Math.Abs(list1[i] - list2[i]);
-        }
-
-        return result;
+        return list1.Zip(list2, (a, b) => Math.Abs(a - b))
+            .Sum();
     }
 
     public object PartTwo(string input)
     {
         var (list1, list2) = ParseInput(input);
 
-        var lookup = new Dictionary<int, int>(list2.Length);
+        var lookup = list2.CountBy(x => x)
+            .ToDictionary();
 
-        foreach (var val in list2)
-        {
-            if (!lookup.TryAdd(val, 1))
-            {
-                lookup[val]++;
-            }
-        }
-
-        var result = 0;
-
-        foreach (var val in list1)
-        {
-            if (lookup.TryGetValue(val, out var count))
-            {
-                result += count * val;
-            }
-        }
-
-        return result;
+        return list1.Where(lookup.ContainsKey)
+            .Sum(val => lookup[val] * val);
     }
 
     private static (int[], int[]) ParseInput(string input)
@@ -58,7 +35,8 @@ public class Solution : ISolver
 
         for (var i = 0; i < lines.Length; i++)
         {
-            var numbers = lines[i].Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            var numbers = lines[i]
+                .Split(' ', StringSplitOptions.RemoveEmptyEntries);
             list1[i] = int.Parse(numbers[0]);
             list2[i] = int.Parse(numbers[1]);
         }
