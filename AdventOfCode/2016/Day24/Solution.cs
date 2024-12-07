@@ -14,6 +14,7 @@ public class Solution : ISolver
                 .ToArray());
 
         var minDistance = int.MaxValue;
+
         foreach (var permutation in permutations)
         {
             permutation.Insert(0, 0);
@@ -42,6 +43,7 @@ public class Solution : ISolver
                 .ToArray());
 
         var minDistance = int.MaxValue;
+
         foreach (var permutation in permutations)
         {
             permutation.Insert(0, 0);
@@ -86,84 +88,84 @@ public class Solution : ISolver
             }
         }
     }
-}
 
-internal class Map
-{
-    private readonly string[] _map;
-    public readonly Point[] PointsOfInterest;
-
-    private readonly int _cols;
-    private readonly int _rows;
-
-    private readonly Dictionary<(Point From, Point To), int> _distances = new();
-
-    private readonly int[] _dx = [0, 1, 0, -1];
-    private readonly int[] _dy = [-1, 0, 1, 0];
-
-    public Map(string input)
+    private class Map
     {
-        _map = input.Split('\n');
-        _cols = _map[0].Length;
-        _rows = _map.Length;
+        private readonly string[] _map;
+        public readonly Point[] PointsOfInterest;
 
-        PointsOfInterest = new Point[10];
-        var pointOfInterestCount = 0;
+        private readonly int _cols;
+        private readonly int _rows;
 
-        for (var i = 0; i < _rows; i++)
+        private readonly Dictionary<(Point From, Point To), int> _distances = new();
+
+        private readonly int[] _dx = [0, 1, 0, -1];
+        private readonly int[] _dy = [-1, 0, 1, 0];
+
+        public Map(string input)
         {
-            var row = _map[i]
-                .AsSpan();
+            _map = input.Split('\n');
+            _cols = _map[0].Length;
+            _rows = _map.Length;
 
-            for (var j = 0; j < _cols; j++)
+            PointsOfInterest = new Point[10];
+            var pointOfInterestCount = 0;
+
+            for (var i = 0; i < _rows; i++)
             {
-                if (int.TryParse(row[j..(j + 1)], out var pointOfInterest))
+                var row = _map[i]
+                    .AsSpan();
+
+                for (var j = 0; j < _cols; j++)
                 {
-                    PointsOfInterest[pointOfInterest] = new Point(i, j);
-                    pointOfInterestCount++;
-                }
-            }
-        }
-
-        PointsOfInterest = PointsOfInterest[..pointOfInterestCount];
-    }
-
-    public int ShortestPath(Point from, Point to)
-    {
-        var key = (from, to);
-
-        if (!_distances.ContainsKey(key))
-        {
-            var queue = new Queue<(Point Point, int Distance)>();
-            queue.Enqueue((from, 0));
-            var seen = new HashSet<Point> { from };
-
-            while (queue.Count > 0)
-            {
-                var (point, distance) = queue.Dequeue();
-
-                if (point == to)
-                {
-                    _distances[key] = distance;
-
-                    break;
-                }
-
-                for (var i = 0; i < _dx.Length; i++)
-                {
-                    var next = new Point(point.Y + _dy[i], point.X + _dx[i]);
-                    var withinBounds = next.Y >= 0 && next.Y < _rows && next.X >= 0 && next.X < _cols;
-
-                    if (withinBounds && _map[next.Y][next.X] != '#' && seen.Add(next))
+                    if (int.TryParse(row[j..(j + 1)], out var pointOfInterest))
                     {
-                        queue.Enqueue((next, distance + 1));
+                        PointsOfInterest[pointOfInterest] = new Point(i, j);
+                        pointOfInterestCount++;
                     }
                 }
             }
+
+            PointsOfInterest = PointsOfInterest[..pointOfInterestCount];
         }
 
-        return _distances[key];
-    }
-}
+        public int ShortestPath(Point from, Point to)
+        {
+            var key = (from, to);
 
-internal record struct Point(int Y, int X);
+            if (!_distances.ContainsKey(key))
+            {
+                var queue = new Queue<(Point Point, int Distance)>();
+                queue.Enqueue((from, 0));
+                var seen = new HashSet<Point> { from };
+
+                while (queue.Count > 0)
+                {
+                    var (point, distance) = queue.Dequeue();
+
+                    if (point == to)
+                    {
+                        _distances[key] = distance;
+
+                        break;
+                    }
+
+                    for (var i = 0; i < _dx.Length; i++)
+                    {
+                        var next = new Point(point.Y + _dy[i], point.X + _dx[i]);
+                        var withinBounds = next.Y >= 0 && next.Y < _rows && next.X >= 0 && next.X < _cols;
+
+                        if (withinBounds && _map[next.Y][next.X] != '#' && seen.Add(next))
+                        {
+                            queue.Enqueue((next, distance + 1));
+                        }
+                    }
+                }
+            }
+
+            return _distances[key];
+        }
+    }
+
+    internal record struct Point(int Y, int X);
+}
