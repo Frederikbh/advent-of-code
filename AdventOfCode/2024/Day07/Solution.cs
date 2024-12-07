@@ -12,7 +12,10 @@ public class Solution : ISolver
 
         foreach (var (result, numbers) in equations)
         {
-            if (IsValidEquation(result, numbers, []))
+            var digits = numbers.Select(GetDigitCount)
+                .ToArray();
+
+            if (IsValidEquationBackward(result, numbers, digits, numbers.Length - 1, false))
             {
                 sum += result;
             }
@@ -28,10 +31,10 @@ public class Solution : ISolver
 
         foreach (var (result, numbers) in equations)
         {
-            var digitLengths = numbers.Select(GetDigitCount)
+            var digits = numbers.Select(GetDigitCount)
                 .ToArray();
 
-            if (IsValidEquation(result, numbers, digitLengths, concatenate: true))
+            if (IsValidEquationBackward(result, numbers, digits, numbers.Length - 1, true))
             {
                 sum += result;
             }
@@ -40,51 +43,64 @@ public class Solution : ISolver
         return sum;
     }
 
-    private static bool IsValidEquation(
-        long result,
+    private static bool IsValidEquationBackward(
+        long target,
         int[] numbers,
         int[] numbersLengths,
-        int i = 0,
-        long partialResult = 0L,
-        bool concatenate = false)
+        int i,
+        bool concatenate)
     {
-        if (i == numbers.Length)
+        if (i < 0)
         {
-            return partialResult == result;
+            return target == 0;
         }
 
-        var currentNumber = numbers[i];
-        var isValidWithOps = IsValidEquation(
-                result,
-                numbers,
-                numbersLengths,
-                i + 1,
-                partialResult * currentNumber,
-                concatenate) ||
-            IsValidEquation(result, numbers, numbersLengths, i + 1, partialResult + currentNumber, concatenate);
+        var n = numbers[i];
+        var digits = numbersLengths[i];
 
+        // Try concatenation if allowed and if target ends with the digits of n
         if (concatenate)
         {
-            return isValidWithOps ||
-                IsValidEquation(
-                    result,
-                    numbers,
-                    numbersLengths,
-                    i + 1,
-                    Concatenate(partialResult, currentNumber, numbersLengths[i]),
-                    concatenate);
+            var pow = Pow10(digits);
+
+            if (target % pow == n)
+            {
+                var prev = target / pow;
+
+                if (IsValidEquationBackward(prev, numbers, numbersLengths, i - 1, concatenate))
+                {
+                    return true;
+                }
+            }
         }
 
-        return isValidWithOps;
+        // Try multiplication if divisible
+        if (n != 0 && target % n == 0)
+        {
+            var prev = target / n;
+
+            if (IsValidEquationBackward(prev, numbers, numbersLengths, i - 1, concatenate))
+            {
+                return true;
+            }
+        }
+
+        // Try addition (always possible)
+        {
+            var prev = target - n;
+
+            if (IsValidEquationBackward(prev, numbers, numbersLengths, i - 1, concatenate))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
-
-    private static long Concatenate(long a, long b, int digitsOfB) => a * (long)Math.Pow(10, digitsOfB) + b;
-
-    private static int GetDigitCount(int num) => (int)Math.Log10(num) + 1;
 
     private static List<(long Result, int[])> ParseInput(string input)
     {
-        var lines = input.Split("\n", StringSplitOptions.RemoveEmptyEntries);
+        var lines = input.Split('\n', StringSplitOptions.RemoveEmptyEntries);
         var results = new List<(long Result, int[])>();
 
         foreach (var line in lines)
@@ -100,5 +116,19 @@ public class Solution : ISolver
         }
 
         return results;
+    }
+
+    private static int GetDigitCount(int num) => (int)Math.Log10(num) + 1;
+
+    private static long Pow10(int digits)
+    {
+        long result = 1;
+
+        for (var i = 0; i < digits; i++)
+        {
+            result *= 10;
+        }
+
+        return result;
     }
 }
